@@ -17,12 +17,12 @@ public class SimpleController {
     }
 
     @GetMapping("/{id}")
-    public SimpleEntity read(@PathVariable Long id) {
-        return repository.findById(id).orElse(new SimpleEntity(0L, "Entity Not Found!"));
+    public SimpleEntity read(@PathVariable Integer id) {
+        return repository.findById(id).orElse(new SimpleEntity(0, "Entity Not Found!"));
     }
 
     @PutMapping("/{id}")
-    public String update(@PathVariable Long id, @RequestBody String message) {
+    public String update(@PathVariable Integer id, @RequestBody String message) {
         repository.findById(id).ifPresent(simpleEntity -> {
             simpleEntity.setMessage(message);
             repository.save(simpleEntity);
@@ -30,8 +30,8 @@ public class SimpleController {
         return message;
     }
 
-    @GetMapping("/{id}")
-    public String delete(@PathVariable Long id) {
+    @DeleteMapping("/{id}")
+    public String delete(@PathVariable Integer id) {
         repository.deleteById(id);
         return "Done";
     }

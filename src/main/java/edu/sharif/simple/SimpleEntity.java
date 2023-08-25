@@ -1,17 +1,13 @@
 package edu.sharif.simple;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 
 @Entity
-@Getter
+@Data
 @Setter
+@Getter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "simples")
@@ -22,7 +18,8 @@ public class SimpleEntity {
     }
 
     @Id
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     @Column(name = "message")
     private String message;
