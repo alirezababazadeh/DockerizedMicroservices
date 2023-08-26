@@ -28,7 +28,8 @@ docker ps:
 
 docker image ls:
 
-![docker image ls command](https://github.com/alirezababazadeh/DockerizedMicroservices/assets/45295180/406cf1d0-9fea-483f-ae54-254dc35bb9f0)
+![docker image ls command](https://github.com/alirezababazadeh/DockerizedMicroservices/assets/45295180/ac8afcbb-5958-41f4-8608-3fb62e8a7f14)
+
 
 ## سوال 5:
 
